@@ -1,0 +1,18 @@
+name: First Workflow
+on: push
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Welcome"
+        run: echo "Welcome to this gihub action"
+
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Bye Job"
+        run: echo "Bye bye github action" 
+
+    
+
+        
