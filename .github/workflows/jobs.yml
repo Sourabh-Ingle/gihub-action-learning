@@ -1,5 +1,7 @@
 name: Jobs Test
-on: push
+on: 
+  workflow_run:
+    Workflow:[First First Workflow]
 jobs:
   validation-html:
     runs-on: ubuntu-latest
