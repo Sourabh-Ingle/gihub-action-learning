@@ -1,0 +1,37 @@
+name: Jobs Test
+on: push
+jobs:
+  validation-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate html File  
+        run: test -f index.html
+
+  validation-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate js File  
+        run: test -f script.html 
+
+     
+  validate-code:
+    needs: [validation-html,validation-js]
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate js code
+        run: node --check script.js  
+
+      - name: Validate html code
+        run: npx htmlhint index.html     
+
+
+         
