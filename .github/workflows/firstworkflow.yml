@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: "Bye Job"
         run: echo "Bye bye github action" 
+        
+      - name: failed jobs
+        run: exit 1
 
     
 
