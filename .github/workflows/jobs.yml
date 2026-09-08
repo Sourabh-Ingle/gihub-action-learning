@@ -2,6 +2,8 @@ name: Jobs Test
 on: 
   workflow_run:
     workflows: [First Workflow]
+    types:
+      - completed
 jobs:
   validation-html:
     runs-on: ubuntu-latest
