@@ -6,10 +6,13 @@ jobs:
     steps:
       - name: checkout all 
         uses: actions/checkout@v4
+
+      - name: setup js in vm
+        uses: actions/setup-node@v4  
         with:
           node-version: 24
-          cache: npm
-
+          cache: npm  
+        
       - name: install dependencies
         run: npm ci 
         
