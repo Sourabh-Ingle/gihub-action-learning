@@ -1,5 +1,5 @@
 name: First Workflow
-on: push
+on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: "Bye Job"
         run: echo "Bye bye github action" 
-        
-      - name: failed jobs
-        run: exit 1
+
+      # - name: failed jobs
+      #   run: exit 1
 
     
 
