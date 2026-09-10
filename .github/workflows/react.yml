@@ -21,6 +21,20 @@ jobs:
         
       - name: install dependencies
         run: npm ci 
+
+      - name: esLinting checkout
+        run: npm run lint 
+
+      - name: test case
+        run: npm run test   
         
       - name: make react build
-        run: npm run build     
+        run: npm run build 
+
+      - name: create artifacts
+        uses: actions/upload-artifact@v4
+        with:
+            name: react build
+            path: dist/
+            retention-days: 7
+                
