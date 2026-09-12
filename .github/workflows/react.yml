@@ -57,6 +57,7 @@ jobs:
         run: npm run test   
   
   Build-job:
+    needs: [ Lint-job , Test-job ]
     runs-on: ubuntu-latest
     steps:
       - name: checkout all 
